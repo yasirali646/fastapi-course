@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Blog</title>
+</head>
+<body>
+    <h1>My Simple Blog</h1>
+
+    {% for post in posts %}
+        <article style="margin-bottom: 20px;">
+            <h2>{{ post.title }}</h2>
+            <p><em>By {{ post.author }} on {{ post.created_at.strftime("%d %b %Y") }}</em></p>
+            <p>{{ post.content }}</p>
+            <hr>
+        </article>
+    {% endfor %}
+</body>
+</html>
