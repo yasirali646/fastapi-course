@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title if post else "Not found" }} - FastAPI Blog{% endblock %}
+{% block content %}
+{% if post %}
+  <article>
+    <h1>{{ post.title }}</h1>
+    <p class="text-muted">By {{ post.author }} • {{ post.created_at.strftime("%d %b %Y %H:%M") }}</p>
+    <p>{{ post.content }}</p>
+
+    <div class="mt-4">
+      <a href="/edit/{{ post.id }}" class="btn btn-primary">Edit</a>
+
+      <form action="/delete/{{ post.id }}" method="post" style="display:inline-block" onsubmit="return confirm('Delete this post?');">
+        <button class="btn btn-danger">Delete</button>
+      </form>
+
+      <a href="/" class="btn btn-link">Back</a>
+    </div>
+  </article>
+{% else %}
+  <div class="alert alert-warning">Post not found.</div>
+  <a href="/" class="btn btn-link">Back to home</a>
+{% endif %}
+{% endblock %}
