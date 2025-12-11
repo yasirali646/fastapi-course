@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Home - FastAPI Blog{% endblock %}
+{% block content %}
+<h1 class="mb-4">All Posts</h1>
+
+{% if posts %}
+  <div class="list-group">
+  {% for post in posts %}
+    <a href="/posts/{{ post.id }}" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ post.title }}</h5>
+        <small>{{ post.created_at.strftime("%d %b %Y %H:%M") }}</small>
+      </div>
+      <p class="mb-1 text-truncate">{{ post.content }}</p>
+      <small>By {{ post.author }}</small>
+    </a>
+  {% endfor %}
+  </div>
+{% else %}
+  <p>No posts yet. <a href="/posts/create">Create one</a>.</p>
+{% endif %}
+{% endblock %}

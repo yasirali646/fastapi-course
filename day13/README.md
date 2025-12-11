@@ -1,0 +1,1 @@
+### In today's session, we will create a Blog project using Jinja2 and PostgreSQL
