@@ -2,6 +2,10 @@
 
 This is a comprehensive FastAPI course that takes you from the basics to building full-fledged web applications with authentication.
 
+## Course Playlist
+
+🎥 [FastAPI Course Playlist](https://www.youtube.com/playlist?list=PLe-jr3hh4N_nHa7ftA_Bq9518k3cz9BXw)
+
 ## Prerequisites
 
 - Python 3.12 or higher
